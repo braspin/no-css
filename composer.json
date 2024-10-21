@@ -1,0 +1,20 @@
+{
+    "name": "braspin/no-css",
+    "description": "CSS engine for PHP",
+    "type": "library",
+    "license": "Apache-2.0",
+    "version": "1.0.0",
+    "autoload": {
+        "psr-4": {
+            "Braspin\\NoCss\\": "src/Braspin/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Fernando Gomes",
+            "email": "nandogsilva@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
