@@ -12,11 +12,15 @@ $cascate->tag('a', [
 ]);
 
 $css = new Css('./', 'style.css', true, -1);
-$css->class('intro', [
+
+$css->class('example', [
   'background-color' => 'yellow'
 ]);
 $css->cascate($cascate, [
   'background-color' => 'black'
 ]);
+$css->id('id', [
+  'background-color' => 'red'
+]);
 
-$css->echo();
+$css->save();

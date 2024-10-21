@@ -1,0 +1,12 @@
+.example { 
+	background-color: yellow;
+} 
+
+a[target="_blank"] { 
+	background-color: black;
+} 
+
+#id { 
+	background-color: red;
+} 
+

@@ -23,7 +23,7 @@ class Css
 
     foreach($properties as $property => &$value)
     {
-      $result .= $property . ': ' . $value . ';' . ($this->endline ? PHP_EOL : '');
+      $result .= "\t" . $property . ': ' . $value . ';' . ($this->endline ? PHP_EOL : '');
     }
 
     $result .= '} ' . ($this->endline ? PHP_EOL : '');
@@ -33,13 +33,19 @@ class Css
 
   public function class(string $name, array $properties = []) : Css
   {
-    $this->content = '.' . $this->code($name, $properties) . ($this->endline ? PHP_EOL : '');
+    $this->content .= '.' . $this->code($name, $properties) . ($this->endline ? PHP_EOL : '');
     return $this;
   }
 
   public function tag(string $name, array $properties = []) : Css
   {
-    $this->content = $this->code($name, $properties) . ($this->endline ? PHP_EOL : '');
+    $this->content .= $this->code($name, $properties) . ($this->endline ? PHP_EOL : '');
+    return $this;
+  }
+
+  public function id(string $name, array $properties = []) : Css
+  {
+    $this->content .= '#' . $this->code($name, $properties) . ($this->endline ? PHP_EOL : '');
     return $this;
   }
 
@@ -66,6 +72,10 @@ class Css
       {
         $replace = true;
       }
+    }
+    else
+    {
+      $replace = true;
     }
 
     $replace |= $force;
